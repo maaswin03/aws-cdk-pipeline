@@ -2,9 +2,9 @@ from aws_cdk import (
     # Duration,
     Stack,
     RemovalPolicy,
-    aws_s3 as s3
 )
 from constructs import Construct
+from aws_cdk.aws_s3 import Bucket
 
 class CdkStack(Stack):
 
@@ -12,5 +12,5 @@ class CdkStack(Stack):
         super().__init__(scope, construct_id, **kwargs)
 
         # create a s3 bucket
-        bucket = s3.Bucket(self, "s3-aswin-bucket",removal_policy=RemovalPolicy.DESTROY,)
+        Bucket(self, "s3-aswin-bucket",removal_policy=RemovalPolicy.DESTROY,)
 
