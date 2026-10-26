@@ -5,6 +5,7 @@ from aws_cdk import (
 )
 from constructs import Construct
 from aws_cdk.aws_s3 import Bucket
+from aws_cdk.aws_sns import Topic
 
 class CdkStack(Stack):
 
@@ -13,4 +14,7 @@ class CdkStack(Stack):
 
         # create a s3 bucket
         Bucket(self, "s3-aswin-bucket",removal_policy=RemovalPolicy.DESTROY,)
+
+        Topic(self, "Topic",display_name="Customer subscription topic")
+
 
