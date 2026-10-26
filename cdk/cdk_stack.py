@@ -13,8 +13,10 @@ class CdkStack(Stack):
         super().__init__(scope, construct_id, **kwargs)
 
         # create a s3 bucket
-        Bucket(self, "s3-aswin-bucket",removal_policy=RemovalPolicy.DESTROY,)
+        Bucket(self, "s3-aswin-bucket",removal_policy=RemovalPolicy.DESTROY)
 
         Topic(self, "Topic",display_name="Customer subscription topic")
+
+        Topic(self, "Topic",display_name="Customer subscription topic - 1")
 
 
